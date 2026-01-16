@@ -1,33 +1,30 @@
-# 🚀 Level 1 – Microservices Fundamentals (Spring Boot)
+# 🚀 Level 1 – Microservices Fundamentals with Spring Boot
 
-This level focuses on building a **strong foundation in Microservices architecture** using **Spring Boot** and **Netflix Eureka**.
-The goal of Level 1 is to understand **service decomposition**, **service discovery**, and **inter-service communication**.
+Level 1 focuses on building a **strong foundation in Microservices architecture** using **Spring Boot**.
+The goal of this level is to understand **how microservices are structured, registered, discovered, and communicate with each other**.
+
+This level intentionally keeps the system simple to focus on **core concepts**, not frameworks overload.
 
 ---
 
-## 📌 What I Learned in Level 1
+## 🎯 Objectives of Level 1
 
-* What Microservices are and why they are used
-* Difference between Monolith, SOA, and Microservices
-* Client-side Service Discovery
-* Netflix OSS and Eureka
-* How microservices register and discover each other
-* How services communicate using service names instead of hardcoded URLs
-* Load balancing with Spring Cloud LoadBalancer
-* Practical debugging of real-world configuration and version issues
+* Understand **what microservices are** and why they exist
+* Learn **Service Discovery** using Netflix Eureka
+* Replace hardcoded URLs with **dynamic service discovery**
+* Build confidence running multiple services together
+* Debug real-world version and configuration issues
 
 ---
 
 ## 🧩 Architecture Overview
-
-This level consists of **four Spring Boot applications**:
 
 ```
 Level-1/
 │
 ├── discovery-server          # Eureka Server (Service Registry)
 │
-├── movie-info-service        # Provides movie information
+├── movie-info-service        # Provides movie details
 │
 ├── ratings-data-service      # Provides movie ratings
 │
@@ -36,31 +33,31 @@ Level-1/
 
 ---
 
-## 🏗️ Services Description
+## 🏗️ Services Breakdown
 
 ### 🔹 Discovery Server
 
-* Acts as a **Service Registry**
-* Built using **Netflix Eureka Server**
-* All microservices register here
+* Central **Service Registry**
+* Built using **Netflix Eureka**
+* All services register here
 * Runs on port **8761**
 
 ---
 
 ### 🔹 Movie Info Service
 
-* Provides basic movie information
-* Registers itself with Eureka
-* Does not know about other services
-* Example: movie name, description
+* Independent microservice
+* Provides movie-related data
+* Registers with Eureka
+* Does not depend on other services
 
 ---
 
 ### 🔹 Ratings Data Service
 
-* Provides ratings for movies
-* Registers itself with Eureka
 * Independent microservice
+* Provides ratings for movies
+* Registers with Eureka
 
 ---
 
@@ -73,13 +70,13 @@ Level-1/
   * Ratings Data Service
 * Uses:
 
-  * Eureka for service discovery
+  * Eureka for discovery
   * Spring Cloud LoadBalancer
-  * RestTemplate with `@LoadBalanced`
+  * `@LoadBalanced` RestTemplate
 
 ---
 
-## ⚙️ Technologies Used
+## ⚙️ Tech Stack
 
 * **Java 11**
 * **Spring Boot 2.7.x**
@@ -91,21 +88,24 @@ Level-1/
 
 ---
 
-## ▶️ How to Run Level 1 (Local Setup)
+## ▶️ How to Run (Local)
 
-### 1️⃣ Start Eureka Server first
+### 1️⃣ Start Eureka Server
 
 ```bash
 cd discovery-server
 mvn spring-boot:run
 ```
 
-Open dashboard:
-👉 [http://localhost:8761](http://localhost:8761)
+Dashboard:
+
+```
+http://localhost:8761
+```
 
 ---
 
-### 2️⃣ Start the microservices (in any order)
+### 2️⃣ Start Microservices
 
 ```bash
 cd movie-info-service
@@ -126,7 +126,7 @@ mvn spring-boot:run
 
 ## ✅ Expected Result
 
-Eureka Dashboard should show:
+Eureka Dashboard should show all services as **UP**:
 
 ```
 DISCOVERY-SERVER
@@ -135,47 +135,43 @@ RATINGS-DATA-SERVICE
 MOVIE-CATALOG-SERVICE
 ```
 
-All services should be **UP**.
-
 ---
 
-## 🧠 Key Concepts Practiced
+## 🧠 Key Concepts Learned
 
+* Service registration and discovery
 * `spring.application.name` as service identity
-* Service registration and heartbeat mechanism
-* Dynamic service discovery at runtime
-* Client-side load balancing
-* Failure handling during service startup
-* Importance of version compatibility (Java, Spring Boot, Spring Cloud)
+* Client-side service discovery
+* Load-balanced inter-service communication
+* Importance of version compatibility
+* Debugging microservices startup issues
 
 ---
 
-## 📈 Outcome of Level 1
+## 📈 Outcome
 
 After completing Level 1, I am confident in:
 
-* Designing basic microservice architectures
-* Running multiple Spring Boot services together
-* Using Eureka for service discovery
-* Debugging real-world microservices issues
-* Understanding how services communicate dynamically
+* Designing basic microservice systems
+* Running and debugging multiple Spring Boot services
+* Using Eureka for dynamic discovery
+* Understanding how services communicate without hardcoded endpoints
 
 ---
 
-## 🚀 What’s Next (Level 2)
+## 🚀 Next Step – Level 2
 
-In **Level 2**, the focus will shift to:
+Level 2 will focus on **production-ready microservices**, including:
 
 * API Gateway
 * Centralized Configuration
-* Fault Tolerance
-* Resilience patterns
-* Better production-ready practices
+* Fault tolerance and resilience
+* Better system design practices
 
 ---
 
 ## ✍️ Author
 
 **Aman**
-Backend / Microservices Learner
+Backend / Microservices Developer
 Java • Spring Boot • Microservices
