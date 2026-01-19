@@ -109,20 +109,25 @@ http://localhost:8761
 
 ```bash
 cd movie-info-service
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ```bash
 cd ratings-data-service
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ```bash
 cd movie-catalog-service
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ---
+
+## Note
+If your system is not using Java 8 or Java 11, ensure the correct Java version is set using JAVA_HOME, as Spring Boot and Spring Cloud versions used in this project are compatible with these Java versions only.
+
+
 
 ## ✅ Expected Result
 
@@ -175,6 +180,7 @@ Level 2 will focus on **production-ready microservices**, including:
 **Aman**
 Backend / Microservices Developer
 Java • Spring Boot • Microservices
+
 
 
 
