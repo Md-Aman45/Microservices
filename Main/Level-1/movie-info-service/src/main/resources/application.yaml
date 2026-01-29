@@ -14,3 +14,10 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: false
+
+
+
+tmdb:
+  api:
+    key: c12ee9b92bb86c1b3f9860096afd899a
+    url: https://api.themoviedb.org/3/movie

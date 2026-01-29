@@ -1,18 +1,23 @@
 package io.aman.movie_info_service.resources;
 
 import io.aman.movie_info_service.models.Movie;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.aman.movie_info_service.services.MovieInfoService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
+
+    private final MovieInfoService movieInfoService;
+
+    public MovieResource(MovieInfoService movieInfoService) {
+        this.movieInfoService = movieInfoService;
+    }
     
-    @RequestMapping("/{movieId}")
-    public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
-        return new Movie(movieId, "DDLJ");
+    @GetMapping("/{movieId}")
+    public Movie getMovieInfo(@PathVariable String movieId) {
+        return movieInfoService.getMovie(movieId);
     }
 }
