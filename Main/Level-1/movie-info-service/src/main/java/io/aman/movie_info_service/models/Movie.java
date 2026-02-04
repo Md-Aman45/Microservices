@@ -5,6 +5,8 @@ public class Movie {
     private String name;
     private String overview;
 
+    
+
 
     public Movie() {}
 
