@@ -182,11 +182,3 @@ Backend / Microservices Developer
 Java • Spring Boot • Microservices
 
 
-
-
-
-
-
-
-
-
