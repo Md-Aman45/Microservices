@@ -25,6 +25,7 @@ public class MovieInfoService {
     }
 
     public Movie getMovie(String movieId) {
+        System.out.println("Movie ID: " + movieId);
         String url = tmdbUrl + "/" + movieId + "?api_key=" + apiKey;
 
         io.aman.movie_info_service.models.TmdbMovie tmdbMovie = 

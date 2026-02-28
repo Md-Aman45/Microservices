@@ -35,7 +35,7 @@ public class CatalogResource {
         
         
         // get all rated movie IDs
-        UserRating ratings = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://rating-data-service/ratingsdata/users/" + userId, UserRating.class);
 
 
         return ratings.getUserRating().stream().map(rating -> {
